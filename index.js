@@ -10,13 +10,16 @@ function followTheFollowers() {
     //Every single user to follow as an array
     var listToFollow = document.getElementsByClassName('L3NKy');
 
+    var followed;
+
     for(var i = 0; i < followLimit; i++){
         (function(i){
             setTimeout(function () {
                 if (i % 6 === 0) {
                     dialog.scrollTop = dialog.scrollHeight;
                 }
-                listToFollow[i].click(); console.log('Followed ' + i + 1);
+                followed = i + 1
+                listToFollow[i].click(); console.log('Followed ' + followed);
             }, delay * i);
         })(i);
     }
