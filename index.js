@@ -2,6 +2,9 @@
 var followLimit = 12;
 var delay = 2000;
 
+//set it true if you want to follow every follower, then followLimit will be replaced
+var followAll = false;
+
 
 function followTheFollowers() {
     //The whole dialog
@@ -12,6 +15,11 @@ function followTheFollowers() {
 
     //Button to unfollow
     var unfollow = document.getElementsByClassName('-Cab_');
+
+    //followAll is true, replace followLimit with the number of total followers
+    if (followAll) {
+        followLimit = title[1].getAttribute('title');
+    }
 
     var followed;
 
